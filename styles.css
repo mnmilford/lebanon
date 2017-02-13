@@ -1,3 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Aclonica|Montserrat');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
 body {
-  background-color: #9FBFB9;
+  margin: 0px;
+  background-color: #CECECE;
+  background-image: url('images/mediterranean_smaller.jpg');
+  background-size: cover;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Aclonica', sans-serif;
+}
+
+h2,h3,h4 {
+  font-size: 1.5em;
+}
+
+img {
+  max-width: 100%;
+}
+
+footer {
+  padding: 16px 0; 
+  text-align: center; 
+  background-color: #2B2B2B; 
+  color: #FFFFFF;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 147px);
+  background-color: #FFFFFF;
+  padding: 20px 35px 40px;
+}
+
+main *:first-child {
+  margin-top: 0px;
+}
+
+main *:last-child {
+  margin-bottom: 0px;
+}
+
+
+/***********************************************
+FORM STYLING
+***********************************************/
+
+#question-page {
+  max-width: 620px;
+  padding: 30px;
+  margin: 0 auto;
+}
+
+#question-page h1 {
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+}
+
+/***********************************************
+LINK STYLING
+***********************************************/
+
+a {color: #14C3CC;}
+a:hover {color: #15CFD9;}
+
+
+/***********************************************
+NAV BAR
+***********************************************/
+
+nav {
+  background-color: #2B2B2B;
+  padding: 20px 8px;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+nav a:hover, nav a:focus {
+  color: #00A651;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav li:last-of-type {
+  margin: 0;
+}
+
+.current-page {
+  color: #00A651;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+/***********************************************
+MEDIA QUERIES
+***********************************************/
+
+@media screen and (max-width: 600px) {
+  main {
+    padding: 20px;
+  }
 }
