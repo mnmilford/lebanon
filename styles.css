@@ -32,8 +32,9 @@ footer {
 
 main {
   max-width: 1200px;
-  margin: 0 auto;
-  min-height: calc(100vh - 147px);
+  margin: 20px auto;
+  min-height: calc(100vh - 187px);
+
 }
 
 main *:first-child {
