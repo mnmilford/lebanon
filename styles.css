@@ -27,14 +27,12 @@ footer {
   text-align: center; 
   background-color: #2B2B2B; 
   color: #FFFFFF;
-  margin-left: -8px;
-  margin-right: -8px;
 }
 
 main {
   max-width: 1200px;
   margin: 0 auto;
-  min-height: 90vh;
+  min-height: calc(100vh - 147px);
   background-color: #FFFFFF;
   padding: 20px 35px 40px;
 }
@@ -62,8 +60,6 @@ NAV BAR
 nav {
   background-color: #2B2B2B;
   padding: 20px 8px;
-  margin-left: -8px;
-  margin-right: -8px;
   font-weight: bold;
   color: #FFFFFF;
   font-size: 1.2em;
