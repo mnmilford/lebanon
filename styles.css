@@ -22,4 +22,37 @@ footer {
   text-align: center; 
   background-color: #2B2B2B; 
   color: #FFFFFF;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+/***********************************************
+NAV BAR
+***********************************************/
+
+nav {
+  background-color: #2B2B2B;
+  padding: 20px 35px;
+  margin-left: -8px;
+  margin-right: -8px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav li:after {
+  content: ' | '
+}
+
+nav li:last-of-type:after {
+  visibility: hidden;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
