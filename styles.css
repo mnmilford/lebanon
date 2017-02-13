@@ -44,25 +44,45 @@ NAV BAR
 
 nav {
   background-color: #2B2B2B;
-  padding: 20px 35px;
+  padding: 20px 8px;
   margin-left: -8px;
   margin-right: -8px;
   font-weight: bold;
   color: #FFFFFF;
   font-size: 1.2em;
+  text-align: center;
+}
+
+nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+nav a:hover, nav a:focus {
+  color: #00A651;
 }
 
 nav li {
   display: inline-block;
+  margin-right: 10px;
 }
 
-nav li:after {
-  content: ' | '
+nav li:last-of-type {
+  margin: 0;
+}
+
+.current-page {
+  color: #00A651;
+}
+
+/*nav li:after {
+  content: '|'
+  margin-left: 10px;
 }
 
 nav li:last-of-type:after {
   visibility: hidden;
-}
+}*/
 
 nav ul {
   list-style: none;
