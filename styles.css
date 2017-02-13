@@ -14,12 +14,12 @@ h1,h2,h3,h4,h5,h6 {
   font-family: 'Aclonica', sans-serif;
 }
 
-h3 {
+h2,h3,h4 {
   font-size: 1.5em;
 }
 
-h4 {
-  font-size: 1.5em;
+img {
+  max-width: 100%;
 }
 
 footer {
@@ -34,9 +34,9 @@ footer {
 main {
   max-width: 1200px;
   margin: 0 auto;
-  min-height: calc(100vh - 147px);
+  min-height: 90vh;
   background-color: #FFFFFF;
-  padding: 20px 35px;
+  padding: 20px 35px 40px;
 }
 
 main *:first-child {
