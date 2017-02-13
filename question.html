@@ -15,22 +15,24 @@
 
   <main>
 
-    <h1>Ask a Question</h1>
+    <div id="question-page">
+      <h1>Ask a Question about Lebanon!</h1>
 
-    <form action="https://httpbin.org/post" method="post">
-      <div>
-        <label for="name"><strong>Full Name:</strong></label>
-        <input type="text" name="name" id="name" autocomplete="name">
-      </div>
-      <br>
-      <div>
-        <label for="question"><strong>What's your question?</strong></label><br>
-        <textarea name="question" id="question" rows="10" cols="50"></textarea>
-      </div>
-      <div>
-        <input type="submit" name="submit">
-      </div>
-    </form>
+      <form action="https://httpbin.org/post" method="post">
+        <div>
+          <label for="name"><strong>Full Name:</strong></label>
+          <input type="text" name="name" id="name" autocomplete="name">
+        </div>
+        <br>
+        <div>
+          <label for="question"><strong>What's your question?</strong></label><br>
+          <textarea name="question" id="question" rows="10" cols="50"></textarea>
+        </div>
+        <div>
+          <input type="submit" name="submit">
+        </div>
+      </form>
+    </div>
 
   </main>
 

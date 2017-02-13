@@ -47,6 +47,25 @@ main *:last-child {
   margin-bottom: 0px;
 }
 
+
+/***********************************************
+FORM STYLING
+***********************************************/
+
+#question-page {
+  max-width: 620px;
+  padding: 30px;
+  margin: 0 auto;
+}
+
+#question-page h1 {
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+}
+
 /***********************************************
 LINK STYLING
 ***********************************************/
