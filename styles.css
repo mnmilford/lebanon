@@ -6,7 +6,8 @@
 }
 
 body {
-  margin: 0 8px;
+  margin: 0px;
+  background-color: #CECECE;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -32,9 +33,10 @@ footer {
 
 main {
   max-width: 1200px;
-  margin: 20px auto;
-  min-height: calc(100vh - 187px);
-
+  margin: 0 auto;
+  min-height: calc(100vh - 147px);
+  background-color: #FFFFFF;
+  padding: 20px 35px;
 }
 
 main *:first-child {
@@ -90,17 +92,19 @@ nav li:last-of-type {
   color: #00A651;
 }
 
-/*nav li:after {
-  content: '|'
-  margin-left: 10px;
-}
-
-nav li:last-of-type:after {
-  visibility: hidden;
-}*/
-
 nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+
+/***********************************************
+MEDIA QUERIES
+***********************************************/
+
+@media screen and (max-width: 600px) {
+  main {
+    padding: 20px;
+  }
 }
