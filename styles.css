@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Aclonica|Montserrat');
 
-body {
-  background-color: #9FBFB9;
+* {
+  box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  margin: 0 8px;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -27,6 +31,14 @@ footer {
 }
 
 /***********************************************
+LINK STYLING
+***********************************************/
+
+a {color: #14C3CC;}
+a:hover {color: #15CFD9;}
+
+
+/***********************************************
 NAV BAR
 ***********************************************/
 
@@ -37,6 +49,7 @@ nav {
   margin-right: -8px;
   font-weight: bold;
   color: #FFFFFF;
+  font-size: 1.2em;
 }
 
 nav li {
