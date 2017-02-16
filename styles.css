@@ -36,7 +36,7 @@ main {
   margin: 0 auto;
   min-height: calc(100vh - 147px);
   background-color: #FFFFFF;
-  padding: 20px 35px 40px;
+  padding: 60px 35px;
 }
 
 main *:first-child {
@@ -54,7 +54,6 @@ FORM STYLING
 
 #question-page {
   max-width: 620px;
-  padding: 30px;
   margin: 0 auto;
 }
 
