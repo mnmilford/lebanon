@@ -1,41 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Lebanon | Ask a Question</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="view-transition" content="same-origin">
+  <title>Lebanon &mdash; Ask a Question</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="question.html" class="current-page">Ask a Question</a></li>
-    </ul>
+  <nav class="nav scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Lebanon</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="question.html" class="active">Ask a Question</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <main>
-
-    <div id="question-page">
-      <h1>Ask a Question about Lebanon!</h1>
+  <main class="form-section">
+    <div class="form-container">
+      <h1>Ask a Question</h1>
+      <p class="form-subtitle">Curious about Lebanon? We'd love to hear from you.</p>
 
       <form action="https://httpbin.org/post" method="post">
-        <div>
-          <label for="name"><strong>Full Name:</strong></label>
-          <input type="text" name="name" id="name" autocomplete="name">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" name="name" id="name" autocomplete="name" placeholder="Your name">
         </div>
-        <br>
-        <div>
-          <label for="question"><strong>What's your question?</strong></label><br>
-          <textarea name="question" id="question" rows="10" cols="50"></textarea>
+        <div class="form-group">
+          <label for="question">Your Question</label>
+          <textarea name="question" id="question" placeholder="What would you like to know about Lebanon?"></textarea>
         </div>
-        <div>
-          <input type="submit" name="submit">
-        </div>
+        <button type="submit" class="btn-submit">Submit Question</button>
       </form>
     </div>
-
   </main>
 
-  <footer><p>Copyright (c) 2017 Michael Milford</p></footer>
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2017 Michael Milford</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
