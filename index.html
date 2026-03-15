@@ -3,115 +3,258 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="view-transition" content="same-origin">
-  <title>Lebanon</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Lebanon — Choose Your Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Playfair+Display:wght@400..700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #0a0f1a;
+      --surface: #111827;
+      --surface-light: #1e293b;
+      --border: rgba(148, 163, 184, 0.12);
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --accent: #22d3ee;
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      -webkit-font-smoothing: antialiased;
+      overflow: hidden;
+    }
+
+    /* Ambient background glow */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80vw;
+      height: 80vw;
+      max-width: 800px;
+      max-height: 800px;
+      background: radial-gradient(circle, rgba(34, 211, 238, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+      width: 100%;
+      text-align: center;
+      animation: fadeUp 0.8s var(--ease-out) both;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      text-wrap: balance;
+    }
+
+    .subtitle {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--text-muted);
+      max-width: 50ch;
+      margin: 0 auto 3.5rem;
+      line-height: 1.6;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 1.25rem;
+      padding: 2.5rem 2rem 2rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.4s var(--ease-out);
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(148, 163, 184, 0.25);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    /* 2017 card accent */
+    .card--2017::before {
+      background: linear-gradient(90deg, #14C3CC, #00A651);
+    }
+
+    /* 2026 card accent */
+    .card--2026::before {
+      background: linear-gradient(90deg, #dc2626, #22d3ee);
+    }
+
+    .card-year {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.03em;
+    }
+
+    .card--2017 .card-year {
+      color: #14C3CC;
+    }
+
+    .card--2026 .card-year {
+      color: var(--accent);
+    }
+
+    .card-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 1.25rem;
+    }
+
+    .card-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 2rem;
+    }
+
+    .card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      transition: gap 0.3s var(--ease-out);
+    }
+
+    .card:hover .card-cta {
+      gap: 0.85rem;
+    }
+
+    .card-cta .arrow {
+      transition: transform 0.3s var(--ease-out);
+    }
+
+    .card:hover .card-cta .arrow {
+      transform: translateX(2px);
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      margin-top: 4rem;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(1.5rem); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 2rem 1.5rem 1.5rem;
+      }
+
+      .card-year {
+        font-size: 2.75rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Lebanon</a>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="question.html">Ask a Question</a></li>
-      </ul>
+  <div class="container">
+    <p class="eyebrow">Lebanon Website Project</p>
+    <h1>Choose Your Experience</h1>
+    <p class="subtitle">The same site about Lebanon, built nine years apart. Pick a version to explore.</p>
+
+    <div class="cards">
+      <a href="2017/index.html" class="card card--2017">
+        <span class="card-year">2017</span>
+        <span class="card-label">The Original</span>
+        <p class="card-desc">Hand-coded HTML &amp; CSS. Montserrat &amp; Aclonica fonts, Mediterranean background, classic layout with tables and lists.</p>
+        <span class="card-cta">View original <span class="arrow">&rarr;</span></span>
+      </a>
+
+      <a href="2026/index.html" class="card card--2026">
+        <span class="card-year">2026</span>
+        <span class="card-label">AI-Generated Redesign</span>
+        <p class="card-desc">Dark theme, glass-morphism navigation, scroll-reveal animations, modern typography, and view transitions. Built with Claude.</p>
+        <span class="card-cta">View redesign <span class="arrow">&rarr;</span></span>
+      </a>
     </div>
-  </nav>
-
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Lebanon</h1>
-      <p>Where ancient heritage meets the Mediterranean</p>
-    </div>
-    <div class="hero-scroll">
-      <span>Scroll to explore</span>
-      <div class="scroll-line"></div>
-    </div>
-  </header>
-
-  <main>
-
-    <section class="about reveal">
-      <div class="section-inner">
-        <div class="about-grid">
-          <div class="about-text">
-            <h2>About Lebanon</h2>
-            <p>Lebanon is a country located in the Middle East. It's bordered by both Israel and Syria, with the Mediterranean Sea along its western coast. The official language of Lebanon is Arabic.</p>
-          </div>
-          <div class="about-flag">
-            <img src="images/Flag_of_Lebanon.png" alt="Flag of Lebanon">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cities reveal">
-      <div class="section-inner">
-        <h2>Largest Cities</h2>
-        <div class="cities-grid">
-          <article class="city-card">
-            <span class="city-rank">01</span>
-            <h3>Beirut</h3>
-            <p class="city-pop">~1,900,000</p>
-          </article>
-          <article class="city-card">
-            <span class="city-rank">02</span>
-            <h3>Tripoli</h3>
-            <p class="city-pop">~850,000</p>
-          </article>
-          <article class="city-card">
-            <span class="city-rank">03</span>
-            <h3>Sidon</h3>
-            <p class="city-pop">~200,000</p>
-          </article>
-          <article class="city-card">
-            <span class="city-rank">04</span>
-            <h3>Jounieh</h3>
-            <p class="city-pop">~110,000</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="cuisine reveal">
-      <div class="section-inner">
-        <h2>Popular Dishes</h2>
-        <div class="dishes">
-          <span class="dish-tag">Baba Ghanouj</span>
-          <span class="dish-tag">Fattoush</span>
-          <span class="dish-tag">Falafel</span>
-          <span class="dish-tag">Kibbeh</span>
-          <span class="dish-tag">Kafta</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="resources reveal">
-      <div class="section-inner">
-        <h2>Learn More</h2>
-        <p>Discover more about Lebanon through the <a href="https://www.cia.gov/library/publications/the-world-factbook/geos/le.html">CIA World Factbook</a>.</p>
-        <div class="perspectives">
-          <article class="perspective-card">
-            <h3>Visitor's Perspective</h3>
-            <p>The World Factbook provides a quick overview of Lebanon organized into major topics. The information is trustworthy, backed by the CIA and regularly updated.</p>
-          </article>
-          <article class="perspective-card">
-            <h3>Developer's Perspective</h3>
-            <p>The site covers important benchmarks — loading in just over 1 second with easy navigation. It uses semantic HTML elements and responds well to both desktop and mobile screens.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-  </main>
+  </div>
 
   <footer>
-    <div class="footer-inner">
-      <p>&copy; 2017 Michael Milford</p>
-    </div>
+    <p>&copy; 2017 Michael Milford</p>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
