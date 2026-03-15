@@ -60,7 +60,7 @@
     .container {
       position: relative;
       z-index: 1;
-      max-width: 820px;
+      max-width: 1100px;
       width: 100%;
       text-align: center;
       animation: fadeUp 0.8s var(--ease-out) both;
@@ -95,7 +95,7 @@
 
     .cards {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
     }
 
@@ -142,6 +142,15 @@
     /* 2026 card accent */
     .card--2026::before {
       background: linear-gradient(90deg, #dc2626, #22d3ee);
+    }
+
+    /* Claude card accent */
+    .card--claude::before {
+      background: linear-gradient(90deg, #c9a84c, #2d6a4f);
+    }
+
+    .card--claude .card-year {
+      color: #c9a84c;
     }
 
     .card-year {
@@ -213,7 +222,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 900px) {
       .cards {
         grid-template-columns: 1fr;
       }
@@ -233,7 +242,7 @@
   <div class="container">
     <p class="eyebrow">Lebanon Website Project</p>
     <h1>Choose Your Experience</h1>
-    <p class="subtitle">The same site about Lebanon, built nine years apart. Pick a version to explore.</p>
+    <p class="subtitle">Three versions of the same subject &mdash; built across nine years of web evolution. Pick one to explore.</p>
 
     <div class="cards">
       <a href="2017/index.html" class="card card--2017">
@@ -248,6 +257,13 @@
         <span class="card-label">AI-Generated Redesign</span>
         <p class="card-desc">Dark theme, glass-morphism navigation, scroll-reveal animations, modern typography, and view transitions. Built with Claude.</p>
         <span class="card-cta">View redesign <span class="arrow">&rarr;</span></span>
+      </a>
+
+      <a href="claude/index.html" class="card card--claude">
+        <span class="card-year">2026</span>
+        <span class="card-label">Claude&rsquo;s Take</span>
+        <p class="card-desc">An editorial love letter to Lebanon &mdash; for the diaspora and its allies. Warm design, rich content, cultural depth. Fully AI-authored.</p>
+        <span class="card-cta">Explore <span class="arrow">&rarr;</span></span>
       </a>
     </div>
   </div>
