@@ -45,6 +45,29 @@
     '.version-back:hover .version-back-label {',
     '  opacity: 1;',
     '  transform: translateX(0);',
+    '}',
+
+    '@media (max-width: 600px) {',
+    '  .version-back {',
+    '    bottom: 1rem;',
+    '    left: 1rem;',
+    '  }',
+    '  .version-back-shape {',
+    '    width: 50px;',
+    '  }',
+    '  .version-back-label {',
+    '    display: none;',
+    '  }',
+    '}',
+
+    '@media (max-width: 400px) {',
+    '  .version-back {',
+    '    bottom: 0.75rem;',
+    '    left: 0.75rem;',
+    '  }',
+    '  .version-back-shape {',
+    '    width: 42px;',
+    '  }',
     '}'
   ].join('\n');
   document.head.appendChild(style);

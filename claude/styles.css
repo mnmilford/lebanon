@@ -720,6 +720,16 @@ ul { list-style: none; }
   .bridge-grid { grid-template-columns: 1fr; }
 
   .nav-links { gap: 1.25rem; }
+
+  .face-card { width: 260px; padding: 1.5rem; }
+
+  .proverb-divider { padding: clamp(2rem, 6vw, 3.5rem) var(--container-x); }
+
+  .bridge-card { padding: 1.5rem; }
+
+  .now-card { padding: 1.5rem; }
+
+  .hero h1 { font-size: clamp(3rem, 10vw, 5rem); }
 }
 
 @media (max-width: 480px) {
@@ -727,5 +737,67 @@ ul { list-style: none; }
 
   .nav-links { gap: 0.75rem; }
 
-  .nav-links a { font-size: 0.78rem; }
+  .nav-links a { font-size: 0.8rem; }
+
+  .nav-logo { font-size: 1rem; }
+
+  .hero h1 { font-size: clamp(2.5rem, 12vw, 3.5rem); }
+
+  .hero-eyebrow { font-size: 0.72rem; letter-spacing: 0.15em; }
+
+  .hero-sub { font-size: 0.95rem; }
+
+  .face-card { width: 240px; padding: 1.25rem; }
+
+  .face-card h3 { font-size: 1.15rem; }
+
+  .face-card p { font-size: 0.85rem; }
+
+  .proverb-divider { padding: clamp(1.5rem, 5vw, 2.5rem) var(--container-x); }
+
+  .proverb-divider blockquote { font-size: clamp(1.1rem, 3vw, 1.5rem); }
+
+  .proverb-divider cite { font-size: 0.72rem; }
+
+  .section-label { font-size: 0.65rem; }
+
+  .section-intro { font-size: 0.95rem; }
+
+  .stats-row { margin-top: 2rem; padding-top: 2rem; gap: 1rem; }
+
+  .diaspora-card { padding: 1.25rem; }
+
+  .diaspora-count { font-size: 1.6rem; }
+
+  .food-item { padding: 0.5rem 1rem; font-size: 0.85rem; }
+
+  .now-card { padding: 1.25rem; }
+
+  .now-card li { font-size: 0.85rem; }
+
+  .bridge-card { padding: 1.25rem; }
+
+  .bridge-card li { font-size: 0.85rem; }
+
+  .gift-highlight { font-size: clamp(1rem, 2vw, 1.2rem); padding-left: 1rem; }
+
+  .footer { padding: clamp(2rem, 6vw, 3.5rem) 0; }
+
+  .footer-proverb { font-size: 1rem; }
+}
+
+@media (max-width: 360px) {
+  .nav-links { gap: 0.5rem; }
+
+  .nav-links a { font-size: 0.75rem; }
+
+  .hero h1 { font-size: 2.5rem; }
+
+  .face-card { width: 220px; }
+
+  .diaspora-card { padding: 1rem; }
+
+  .diaspora-count { font-size: 1.4rem; }
+
+  .proverb-divider blockquote { font-size: 1.1rem; }
 }

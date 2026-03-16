@@ -24,6 +24,16 @@ img {
   max-width: 100%;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px 12px;
+  text-align: left;
+}
+
 footer {
   padding: 16px 0; 
   text-align: center; 
@@ -119,8 +129,52 @@ nav ul {
 MEDIA QUERIES
 ***********************************************/
 
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 15px 8px;
+    font-size: 1em;
+  }
+
+  nav li {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 6px;
+  }
+
+  nav li:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
 @media screen and (max-width: 600px) {
   main {
     padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.6em;
+  }
+
+  h2, h3, h4 {
+    font-size: 1.2em;
+  }
+
+  table {
+    font-size: 0.9em;
+  }
+
+  th, td {
+    padding: 6px 8px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  main {
+    padding: 15px 12px;
+  }
+
+  nav {
+    padding: 12px 8px;
+    font-size: 0.95em;
   }
 }
